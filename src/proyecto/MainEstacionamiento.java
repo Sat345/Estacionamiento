@@ -1,6 +1,10 @@
 package proyecto;
 
 import java.util.Scanner;
+/*Nuevo mensaje de prueva
+* ver
+* este
+* mensaje*/
 
 //public class mainEstacionamiento {  package proyecto;
 
