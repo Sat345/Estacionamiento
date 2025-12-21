@@ -2,20 +2,20 @@ package proyecto;
 
 class Coche{
 
-     String color;
+    String color;
     String tamaño;
     String placas;
     String marca;
     String modelo;
+    int cajon;
 
-
-
-    public Coche(String color, String tamaño, String placas, String marca, String modelo) {
+    public Coche(String color, String tamaño, String placas, String marca, String modelo, int cajon) {
         this.color = color;
         this.tamaño = tamaño;
         this.placas = placas;
         this.marca = marca;
         this.modelo = modelo;
+        this.cajon = cajon;
     }
 
     public String getColor() {
@@ -58,6 +58,18 @@ class Coche{
         this.modelo = modelo;
     }
 
+    public int getCajon() {
+        return cajon;
+    }
+
+    public void setCajon(int cajon) {
+        this.cajon = cajon;
+    }
+
+    public String mostrarInfo() {
+        return color + " " + tamaño + " " + placas + " " + marca + " " + modelo + " " + cajon;
+    }
+
     @Override
     public String toString() {
         return "Coche{" +
@@ -66,6 +78,7 @@ class Coche{
                 ", placas='" + placas + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
+                ", cajon=" + (cajon+1) +
                 '}';
     }
 }

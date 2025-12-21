@@ -1,7 +1,0 @@
-color: tyu
-tamanio: chico
-placas: yuio
-marca: ghjk
-dia: Domingo. 30/11/2025
-Hora de entrada: 0:3
-Numero de serie: 0

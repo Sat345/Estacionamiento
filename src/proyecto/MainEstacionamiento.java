@@ -1,64 +1,58 @@
 package proyecto;
 
 import java.util.Scanner;
-/*Nuevo mensaje de prueva
-* ver
-* este
-* mensaje*/
+
 
 //public class mainEstacionamiento {  package proyecto;
 
 public class MainEstacionamiento {
 	public static void main(String[] args) { 
-		
-		
-		Scanner Opcion1 = new Scanner(System.in);
-		
-		
-        Tickets tickets = new Tickets();
+
+		Scanner opcion = new Scanner(System.in);
 		Caja caja = new Caja();
-		Cajones cajones = new Cajones();
-		Estacionamiento espacio[] = new Estacionamiento[300];
-		Coche coche = new Coche("","","","","");
-		
-						//color, tamaño, marca, placas, modelo
-		int Opcion;
-		int i=0;
+        Cajon cajones = new Cajon();
+		Estacionamiento espacio = new Estacionamiento();
+		Coche coche = new Coche("","","","","",0);
+
+		byte menu;
 		do {
-			espacio[i] = new Estacionamiento();
-			espacio[0].pedirDatos();
-			
-			Opcion = Opcion1.nextInt();
-			switch(Opcion) {
+			espacio.Opciones();
+			try{
+                menu = opcion.nextByte();
+                opcion.nextLine();
+            } catch (Exception e) {
+                opcion.nextLine();
+                menu=0;
+            }
+
+			switch(menu) {
 			case 1:
-				espacio[i++].ingresarCoche(cajones, caja, tickets, i);
-                System.out.println("espacio i = " + i);
+
+				espacio.ingresarCoche(cajones, caja, coche);
 				break;
 			case 2:
-				//i=Espacio que quieras retirar
-				espacio[i].retirarCoche(cajones, caja, tickets, i);
+
+				espacio.retirarCoche(caja);
 				break;
 			case 3:
-				System.out.println();
-				//tickets.borrarTicket();
-				tickets.ticketTexto();
-				System.out.println("Creo que ya guarda :|");
-
+                espacio.leerTxt(caja);
 				break;
 			case 4:
-				System.out.println(coche);
+                caja.mostarLista();
 				break;
-				case 5:
-					cajones.mostrarTodosLosLugares();
+            case 5:
+				cajones.mostrarTodosLosLugares();
+                break;
 			default:
+                System.out.println("Ingresa un numero del 1 al 6");
+                break;
 			}
-			
-		}while(Opcion!=6);
+		}while(menu!=6);
 		
 		System.out.println("Fin del menu");
 	}
 	
-	Cajones n = new Cajones();
+	Cajon n = new Cajon();
 	
 	
 }
